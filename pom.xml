@@ -77,6 +77,13 @@
 			<optional>true</optional>
 		</dependency>
 
+	<!--  hash -->
+		<dependency>
+  			 <groupId>org.springframework.boot</groupId>
+   			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
 		<!-- reload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
