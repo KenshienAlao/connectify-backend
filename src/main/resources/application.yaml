@@ -20,9 +20,12 @@ supabase:
   url: ${SUPABASE_URL}
   key: ${SUPABASE_KEY}
 
+jwt:
+  secret: ${JWT_SECRET}
+
 app:
   cors:
     allowed-origins: ${FRONTEND_URL}
-    allowed-methods: GET, POST, PUT, DELETE
+    allowed-methods: GET, POST, PUT, DELETE, OPTIONS
     allowed-headers: Content-Type, Authorization
     allow-credentials: true

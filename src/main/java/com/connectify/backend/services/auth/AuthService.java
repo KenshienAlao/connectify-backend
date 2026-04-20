@@ -23,6 +23,9 @@ public class AuthService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private JwtService jwtService;
     
     @Transactional
     public RegisterResponse registerUser(RegisterRequest entity) {
@@ -83,7 +86,8 @@ public class AuthService {
 
         return new LoginResponse(
                 user.getId(),
-                "dummy-auth-token", 
+                jwtService.generateAccessToken(user.getEmail()), 
+                jwtService.generateRefreshToken(user.getEmail()), 
                 new UserResponse(
                     user.getId(),
                     user.getEmail(),

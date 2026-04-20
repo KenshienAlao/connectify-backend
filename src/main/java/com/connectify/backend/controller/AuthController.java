@@ -29,7 +29,7 @@ public class AuthController {
 
     @GetMapping("/test")
     public String test() {
-        return "test";
+        return "working";
     }
 
     @PostMapping("/register")
@@ -40,7 +40,9 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity <ApiResponse<LoginResponse>> login(@Valid @RequestBody LoginRequest entity) {
+        System.out.println(entity);
         LoginResponse data = authService.loginUser(entity);
+        System.out.println("Success");
         return ResponseEntity.ok(ApiResponse.ok("User logged in successfully", "LOGIN_SUCCESS", data));
     }
     

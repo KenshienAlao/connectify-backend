@@ -4,6 +4,7 @@ import com.connectify.backend.dto.user.UserResponse;
 
 public record LoginResponse(
     Integer id,
-    String token,
+    String accessToken,
+    String refreshToken,
     UserResponse user
 ) {}
